@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipping Card</title>
+<style>
+    body{
+        background: rgba(236, 201, 201, 0.589);
+        
+    }
+    .card-container {
+        width: 300px;
+        height: 550px;
+        perspective: 1000px;
+        margin: 50px auto;
+       
+        
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+        
+    }
+
+    .card.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    .front {
+        background: #f0f0f0;
+        border-radius: 1rem;
+    }
+
+    .back {
+        background: #b0b0b0;
+        transform: rotateY(180deg);
+        border-radius: 1rem;
+    }
+
+    .message {
+        text-align: center;
+        padding: 0 20px;
+    }
+    img{
+        width: 100%; 
+        height: 100%; 
+        border-radius: 1rem;
+        object-fit:cover;
+    }
+    .flip-btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    button{
+        width: 100px;
+        height: 30px;
+        position: relative;
+        top: -55px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        color: black;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        border-radius: 0.5rem;
+       
+       
+    }
+</style>
+</head>
+<body>
+<div class="card-container">
+    <div class="card">
+        <div class="card-face front">
+            <img src="./images/f-3.jfif" alt="Front Image">
+            <div class="flip-btn">
+                <button>Click to Flip!</button>
+            </div>
+        </div>
+        <div class="card-face back">
+            <div class="message">
+                <h2>"Miss Goddess"</h2>
+                <p>hmm mai nahi raha aur kyuki tum itni damm ho us dinn hazaro ankhe tum par hongi so this evil eye bracelet for you , so that no evil eye can effect you on that day idk tumhe pasand hai ya nahi but yeah this is for you ,
+                    u can wear it and if u dont want just keep it with urself. <br>"Daal logi to mujhe achcha lagega" <br> Aisa nahi hai mai believe karta hu but yeah , and enjoy karna bahut , mera bhi mann hai aane ka but u know na mere friend ko meri help chahiye agar nahi gaya to he will feel bad .<br><br> "SORRYYYY"<br><br>And i want to ask something</p>
+                    <h3>"DID YOU EVER FELL IN PILE OF SUGAR <br>BECAUSE YOU ARE SOHH SWEET"</h3>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="flip-btn">
+        <button>Flip the Card!</button>
+    </div> -->
+</div>
+<script>
+    document.querySelector('.card').addEventListener('click', function() {
+        this.classList.toggle('flipped');
+    });
+</script>
+</body>
+</html>
